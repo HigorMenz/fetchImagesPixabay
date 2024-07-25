@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+  />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Image Search</title>
+  </head>
+  <body class="container">
+    <h1>Search de Images on Pixabay</h1>
+    <div class="buscador">
+      <form>
+        <div class="flex__input">
+          <label  class="label__input" for="input">keyword</label>
+          <input
+            type="text"
+            placeholder="ej sdsd"
+            class="input__s"
+            id="input"
+          />
+        </div>
+      </form>
+      <input type="submit" class="form__btn" value="search">
+    </div>
+  
+   
+   
+    <div id="resultado" class=" card__container">
+      <div class="test">
+        <img class="card__image" src="./assets/img/ewe.png">
+        <div class="icons__container">
+          <span class="views">
+            <i class="ri-eye-fill"></i> <p>Views</p> 
+          </span>
+          <span class="likes">
+            <i class="ri-heart-fill"></i><p>Likes</p> 
+          </span>
+         
+        </div>
+        <div class="btn__container">
+
+          <button class="btn">Open Image</button>
+   
+      </div>
+
+    <div id="paginacion" class="container ">
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
