@@ -166,8 +166,8 @@ p{
 
 }
 .btn{
-  width: 150px;
-  padding: .8rem;
+  min-width:25rem;
+  padding: 1rem;
   margin: 2rem auto;
   outline: none;
   text-transform: uppercase;
@@ -183,4 +183,21 @@ p{
 .btn:hover{
 
 color: rgb(105, 0, 218);
+}
+
+/*alert*/
+
+.alert{
+
+  color: red;
+  font-weight: bold;
+  background-color: rgb(248, 189, 189);
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width:70%;
+  text-transform: uppercase;
+  text-align: center;
+  align-items: center;
+  border: none;
+  border-radius: .2rem;
 }

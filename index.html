@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
     <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"
-  />
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,41 +22,41 @@
   <body class="container">
     <h1>Search de Images on Pixabay</h1>
     <div class="buscador">
-      <form>
+      <form id="form" class="">
         <div class="flex__input">
-          <label  class="label__input" for="input">keyword</label>
+          <label class="label__input" for="input">keyword</label>
           <input
             type="text"
             placeholder="ej sdsd"
             class="input__s"
             id="input"
           />
+          <input type="submit" class="form__btn" value="search" />
         </div>
       </form>
-      <input type="submit" class="form__btn" value="search">
     </div>
+
+    <div id="resultado" class="card__container">
   
-   
-   
-    <div id="resultado" class=" card__container">
-      <div class="test">
-        <img class="card__image" src="./assets/img/ewe.png">
+       
         <div class="icons__container">
           <span class="views">
-            <i class="ri-eye-fill"></i> <p>Views</p> 
+            <i class="ri-eye-fill"></i>
+            <p>Views</p>
           </span>
           <span class="likes">
-            <i class="ri-heart-fill"></i><p>Likes</p> 
+            <i class="ri-heart-fill"></i>
+            <p>Likes</p>
           </span>
-         
         </div>
         <div class="btn__container">
-
           <button class="btn">Open Image</button>
-   
+       
       </div>
+    </div>
 
-    <div id="paginacion" class="container ">
+    <div id="paginacion" class="container"></div>
+   
 
     <script src="assets/js/app.js"></script>
   </body>
