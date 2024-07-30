@@ -1,6 +1,9 @@
 const result = document.querySelector("#resultado");
 const form = document.querySelector("#form");
-
+const page = document.querySelector("#pagination");
+const imgxPage = 18;
+let totalPages;
+let iterador;
 window.onload = () => {
   form.addEventListener("submit", checkForm);
 };
@@ -19,10 +22,19 @@ function checkForm(e) {
 }
 function findImages(word) {
   const key = "44191097-42a6305f0170543a9e537fd56";
-  const url = `https://pixabay.com/api/?key=${key}&q=${word}`;
+  const url = `https://pixabay.com/api/?key=${key}&q=${word}&per_page=${imgxPage}`;
   fetch(url)
     .then((response) => response.json())
-    .then((result) => showImages(result.hits));
+    .then((result) => {
+      showImages(result.hits);
+      totalPages = calcPages(result.totalHits);
+    });
+}
+
+function* createPagination(total) {
+  for (let i = 1; i <= total; i++) {
+    yield i;
+  }
 }
 
 function showAlert(message) {
@@ -54,12 +66,40 @@ function showImages(images) {
       <div class="test">
            <img class="card__image" src="${previewURL}">
             <div class="icons__container">
-             
-     
-            <p>Views</p>
-          </span>
-            
+                <span class="views">
+                     <i class="ri-eye-fill"></i>
+                   <p>${views}</p>
+               </span>
+               <span class="likes">
+                  <i class="ri-heart-fill"></i>
+                  <p>${likes}</p>
+              </span>
             </div>
+             <div class="btn__container">
+                <a class="btn" href="${largeImageURL}" target="_blank" rel="noopener noreferrer">Open Image</a>
+              </div>
       </div>`;
   });
+  printPagination();
+}
+
+function calcPages(total){
+  return parseInt(Math.ceil(total / imgxPage))
+}
+
+function printPagination() {
+  iterador = createPagination(totalPages);
+
+  while(true){
+    const {value, done} = iterador.next();
+    if(done)return;
+
+    const button = document.createElement('a')
+    button.href="#"
+    button.dataset.pages = value;
+    button.textContent = value;
+    button.classList.add("pagination")
+
+    page.appendChild(button)
+  }
 }
