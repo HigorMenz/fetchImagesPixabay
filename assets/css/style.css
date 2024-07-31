@@ -15,7 +15,7 @@ html {
 body {
   color: white;
   background: #242424;
-  
+
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
@@ -32,7 +32,6 @@ picture {
   width: 70%;
   max-width: 120rem;
   margin: 0 auto;
-
 }
 /*-----------------------------*/
 h1 {
@@ -100,7 +99,6 @@ h1 {
 }
 .form__btn:hover {
   color: rgb(105, 0, 218);
-
 }
 
 .card__container {
@@ -110,7 +108,6 @@ h1 {
   justify-content: center;
   align-items: center;
   margin-bottom: 4rem;
-  
 }
 .test {
   background-color: #121212;
@@ -122,104 +119,102 @@ h1 {
   flex-direction: column;
   flex-wrap: nowrap;
 }
-.card__image{
+.card__image {
   width: 100%;
   min-height: 20rem;
   background: white;
   max-height: 2.57rem;
 
-
   object-fit: cover;
-
 }
-.icons__container{
+.icons__container {
   padding: 0 2rem;
   margin: 1rem 0;
   display: flex;
   justify-content: space-around;
 }
-.views{
+.views {
   display: flex;
   align-items: center;
-  
-  gap: .6rem;
+
+  gap: 0.6rem;
 }
 
-.ri-eye-fill{
+.ri-eye-fill {
   color: rgb(255, 166, 0);
-   font-family: "Poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2rem;
 }
-p{
+p {
   color: white;
   font-weight: 600;
   font-size: 1.2rem;
 }
 
-.likes{
+.likes {
   display: flex;
   align-items: center;
 
-  gap: .6rem;
+  gap: 0.6rem;
 }
-.ri-heart-fill{
+.ri-heart-fill {
   color: rgb(254, 1, 123);
   font-size: 2rem;
-
 }
 
-
-.btn__container{
+.btn__container {
   margin-top: 1rem;
 }
-.btn{
-  min-width:25rem;
-  padding: .8rem;
+.btn {
+  min-width: 25rem;
+  padding: 0.8rem;
   margin: 2rem auto;
   outline: none;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   font-family: "Poppins", sans-serif;
   color: #000;
   font-weight: 700;
   background-color: rgb(255, 255, 255);
-
 }
-.btn:hover{
-
-color: rgb(105, 0, 218);
+.btn:hover {
+  color: rgb(105, 0, 218);
 }
 
 /*alert*/
 
-.alert{
-
+.alert {
   color: red;
   font-weight: bold;
   background-color: rgb(248, 189, 189);
   padding: 1rem;
   margin: 2rem auto;
-  max-width:70%;
+  max-width: 70%;
   text-transform: uppercase;
   text-align: center;
   align-items: center;
   border: none;
-  border-radius: .2rem;
+  border-radius: 0.2rem;
 }
 
-.pagem{
-  margin: 0;
-  padding: 0;
+.pagination__container {
+  display: flex;
+  gap: 1rem;
+  
+  flex-wrap: wrap;
 }
 
-.pagination{
-  margin: 0;
-  padding: 0;
-  text-align:start;
-
- 
-  color: white;
-  font-size: 5rem;
+.pagination {
+  display: flex;
+  border-radius: 0.4rem;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  font-weight: bold;
+  color: #121212;
+  background-color: rgb(255, 166, 0);
 }

@@ -1,9 +1,11 @@
 const result = document.querySelector("#resultado");
 const form = document.querySelector("#form");
 const page = document.querySelector("#pagination");
+
 const imgxPage = 18;
 let totalPages;
 let iterador;
+let actualPage = 1;
 window.onload = () => {
   form.addEventListener("submit", checkForm);
 };
@@ -18,11 +20,14 @@ function checkForm(e) {
 
     return;
   }
-  findImages(searchWord);
+  findImages();
 }
-function findImages(word) {
+function findImages() {
+
+  const word = document.querySelector("#input").value;
+
   const key = "44191097-42a6305f0170543a9e537fd56";
-  const url = `https://pixabay.com/api/?key=${key}&q=${word}&per_page=${imgxPage}`;
+  const url = `https://pixabay.com/api/?key=${key}&q=${word}&per_page=${imgxPage}&page=${actualPage}`;
   fetch(url)
     .then((response) => response.json())
     .then((result) => {
@@ -31,8 +36,9 @@ function findImages(word) {
     });
 }
 
-function* createPagination(total) {
+function *createPagination(total) {
   for (let i = 1; i <= total; i++) {
+    console.log(total)
     yield i;
   }
 }
@@ -80,6 +86,12 @@ function showImages(images) {
               </div>
       </div>`;
   });
+
+  while(page.firstChild){
+    page.removeChild(page.firstChild)
+  }
+
+
   printPagination();
 }
 
@@ -88,6 +100,7 @@ function calcPages(total){
 }
 
 function printPagination() {
+ 
   iterador = createPagination(totalPages);
 
   while(true){
@@ -99,6 +112,12 @@ function printPagination() {
     button.dataset.pages = value;
     button.textContent = value;
     button.classList.add("pagination")
+
+    //navigation
+    button.onclick = () => {
+      actualPage = value;
+     findImages();
+    }
 
     page.appendChild(button)
   }
